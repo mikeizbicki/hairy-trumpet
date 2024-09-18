@@ -4,11 +4,11 @@
 
 Hairy Trumpet is a tool for generating [cloze style benchmarks](https://en.wikipedia.org/wiki/Cloze_test) for LLMs.
 The benchmarks are designed to test the LLMs domain-specific knowledge, and are not general purpose benchmarks.
+It is particularly useful for evaluating RAG systems.
 <!--
 The tool was originally designed for generating datasets related to the US 2024 presidential election cycle,
 but can be used to generate benchmarks for arbitrary domains.
 -->
-It is particularly useful for evaluating RAG systems.
 
 **Example:**
 A dataset designed to evaluate an LLMs knowledge of fungus could have a data point like
