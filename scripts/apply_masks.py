@@ -199,7 +199,6 @@ def dp_canonicalize(dp):
     return dp
 
 
-
 def split_into_sentences(text):
     r''' 
     Split the input text into sentences.
@@ -224,13 +223,18 @@ def split_into_sentences(text):
 
 
 if __name__ == '__main__':
+
+    valid_transformations = {name[3:]:f for name,f in locals().items() if name.startswith('dp_')}
+
     import argparse
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('input_file')
-    parser.add_argument('--names', default='2024people')
+    parser.add_argument('file_to_mask')
+    parser.add_argument('file_with_masks')
     parser.add_argument('--out_dir', default='data')
-    parser.add_argument('--print_every', default=1000, type=int)
+    parser.add_argument('--print_every', default=1, type=int)
     parser.add_argument('--minwords', default=10, type=int)
+    parser.add_argument('--dpsize', choices=['sentence', 'paragraph'], default='paragraph')
+    parser.add_argument('--transformations', nargs='*', default=['canonicalize', 'group', 'rmtitles', 'split'], choices=valid_transformations.keys())
     args = parser.parse_args()
 
     import logging
@@ -240,45 +244,43 @@ if __name__ == '__main__':
         level='INFO',
         )
 
-    with open(args.names) as fin:
+    with open(args.file_with_masks) as fin:
         mask_patterns = [pattern for line in fin.readlines() for pattern in name_to_patterns(line.strip())]
-        names = os.path.basename(args.names)
+        file_with_masks = os.path.basename(args.file_with_masks)
 
-    fin = open(args.input_file)
-    output_file = args.out_dir + '/' + os.path.basename(args.input_file)
-    fout_s = open(output_file + f'__{names}-sentence.jsonl', 'wt')
-    fout_p = open(output_file + f'__{names}-paragraph.jsonl', 'wt')
-    fout_st = open(output_file + f'__{names}-sentence-notitles.jsonl', 'wt')
-    fout_pt = open(output_file + f'__{names}-paragraph-notitles.jsonl', 'wt')
-    fout_s2 = open(output_file + f'__{names}-sentence-split.jsonl', 'wt')
-    fout_p2 = open(output_file + f'__{names}-paragraph-split.jsonl', 'wt')
-    fout_st2 = open(output_file + f'__{names}-sentence-split-notitles.jsonl', 'wt')
-    fout_pt2 = open(output_file + f'__{names}-paragraph-split-notitles.jsonl', 'wt')
+    with open(args.file_to_mask, 'rt') as fin:
+        total_lines = len(list(fin))
 
-    def write_if_valid_data(f, data):
-        if len(data['masks']) > 0:
-            f.write(json.dumps(data) + '\n')
+    with open(args.file_to_mask, 'rt') as fin:
+        output_file = args.out_dir + '/' + os.path.basename(args.file_to_mask)
+        transformations_str = str(args.transformations).replace("'", "")
+        output_file += f'__dpsize={args.dpsize},transformations={transformations_str}'
+        with open(output_file, 'wt') as fout:
+            for i, line in enumerate(fin):
+                line = line.strip()
+                if (i+1)%args.print_every == 0:
+                    logging.info(f'procesing line {i}/{total_lines} = {100*i/total_lines:0.2f}%')
+                if len(line) == 0 or line[0] == '=':
+                    continue
 
-    for i, line in enumerate(fin):
-        if line[0] == '=':
-            continue
-        if (i+1)%args.print_every == 0:
-            logging.info(f'line {i}')
-        line = line.strip()
-        for sentence in split_into_sentences(line):
-            if len(sentence.split()) < args.minwords:
-                continue
-            dp = dp_group(dp_canonicalize(create_dp(sentence, mask_patterns)))
-            write_if_valid_data(fout_s, dp)
-            write_if_valid_data(fout_st, dp_rmtitles(dp))
-            for dp in dp_split(dp):
-                write_if_valid_data(fout_s2, dp)
-                write_if_valid_data(fout_st2, dp_rmtitles(dp))
-        if len(line.split()) < args.minwords:
-            continue
-        dp = dp_group(dp_canonicalize(create_dp(line, mask_patterns)))
-        write_if_valid_data(fout_p, dp)
-        write_if_valid_data(fout_pt, dp_rmtitles(dp))
-        for dp in dp_split(dp):
-            write_if_valid_data(fout_p2, dp)
-            write_if_valid_data(fout_pt2, dp_rmtitles(dp))
+                texts = [line]
+                if args.dpsize == 'sentence':
+                    texts = split_into_sentences(line)
+                for text in texts:
+                    if len(text.split()) < args.minwords:
+                        continue
+                    dp = create_dp(text, mask_patterns)
+                    dps = [dp]
+                    for transformation in args.transformations:
+                        dps1 = []
+                        for dp in dps:
+                            dp1 = valid_transformations[transformation](dp)
+                            if type(dp1) == list:
+                                dps1 += dp1
+                            else:
+                                dps1.append(dp1)
+                        dps = dps1
+
+                    for dp in dps:
+                        if len(dp['masks']) > 0:
+                            fout.write(json.dumps(dp) + '\n')
