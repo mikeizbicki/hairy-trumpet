@@ -8,6 +8,8 @@ The tool was originally designed for generating datasets related to the US 2024 
 but can be used to generate benchmarks for arbitrary domains.
 -->
 
+----------
+
 <img align=right width=200px src=img/hairy-trumpet.jpg />
 
 **Example 1:**
@@ -24,6 +26,8 @@ In order to correctly predict this value,
 the LLM clearly needs to know the relationship between common and scientific names for this fungus species.
 
 <img align=right width=200px src=img/harris-trump.jpg />
+
+----------
 
 **Example 2:**
 A different dataset designed to evaluate an LLM's knowledge of the US 2024 election might have a data point like
