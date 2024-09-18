@@ -2,7 +2,7 @@
 
 set -e
 
-for file in masks/*; do
+for file in domains/*; do
     echo $file
     python3 scripts/download_wiki.py --pages_file="$file"
 done

@@ -37,7 +37,7 @@ if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--page')
-    parser.add_argument('--pages_file')
+    parser.add_argument('--domain_file')
     parser.add_argument('--output_dir', default='raw')
     parser.add_argument('--recursive_depth', type=int, default=0)
     args = parser.parse_args()
@@ -54,13 +54,13 @@ if __name__ == '__main__':
     if args.page:
         output_prefix = f'wiki__page={args.page}'
         pages = [args.page]
-    elif args.pages_file:
+    elif args.domain_file:
         import os
-        output_prefix = f'wiki__pages_file={os.path.basename(args.pages_file)}'
-        with open(args.pages_file, 'rt') as fin:
+        output_prefix = f'wiki__domain_file={os.path.basename(args.domain_file)}'
+        with open(args.domain_file, 'rt') as fin:
             pages = [line.strip() for line in fin.readlines()]
     else:
-        print('must supply either --page or --pages_file')
+        print('must supply either --page or --domain_file')
         import sys
         sys.exit(1)
     
