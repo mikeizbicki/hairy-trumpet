@@ -31,8 +31,8 @@ A different dataset designed to evaluate an LLM's knowledge of the US 2024 elect
 Here, the model must correctly guess that `[MASK0]` refers to `Harris` and `[MASK1]` corresponds to `Trump`.
 This is a challenging task for an LLM because the election news is outside of the training data for all current LLMs,
 and therefore a RAG-type system is required for them to acquire this knowledge.
+<img aligin=right width=200px src=img/harris-trump.jpg />
 
-<img width=400px src=img/harris-trump.jpg />
 
 
 ## Structure of the data
