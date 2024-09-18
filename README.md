@@ -1,6 +1,6 @@
 # Hairy Trumpet
 
-<img align=right width=300px src=img/hairy-trumpet.jpg />
+<img align=right width=200px src=img/hairy-trumpet.jpg />
 
 Hairy Trumpet is a tool for generating [cloze style benchmarks](https://en.wikipedia.org/wiki/Cloze_test) for LLMs.
 The benchmarks are designed to test the LLMs domain-specific knowledge, and are not general purpose benchmarks.
