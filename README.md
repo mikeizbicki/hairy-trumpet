@@ -14,7 +14,7 @@ A number of pre-made datasets are available in the [data](/data) subfolder.
 Each dataset is contained in an individual `.jsonl` file,
 with one line per datapoint.
 
-An example data point from a [mycology dataset](data/wiki__pages_file=fungus,recursive_depth=0__dpsize=sentence,transformations=[canonicalize, group, rmtitles, split]) data looks like
+An example data point from a mycology dataset looks like
 ```
 {
     "masked_text": "Panus fasciatus (common name includes [MASK0]) is a species of fungus in the family Polyporaceae in the genus Panus of the Basidiomycota.",
