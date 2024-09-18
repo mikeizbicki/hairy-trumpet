@@ -1,22 +1,85 @@
-{"masked_text": "[MASK0] (common name includes hairy trumpet) is a species of fungus in the family Polyporaceae in the genus Panus of the Basidiomycota.", "masks": ["Fasciatus"]}
-{"masked_text": " P. [MASK0] has a fruiting body in the shape of a funnel with a velvety texture, hence the nickname \"hairy trumpet.\"", "masks": ["Fasciatus"]}
-{"masked_text": " For this reason, [MASK0] is sometimes referred to as Lentinus [MASK0].", "masks": ["Fasciatus"]}
-{"masked_text": " [MASK0] has been described with numerous other names which were combined by Pegler in 1965.", "masks": ["Fasciatus"]}
-{"masked_text": "P. [MASK0] also has deeply decurrent gills, a velvety pileus, and dense hairs.", "masks": ["Fasciatus"]}
-{"masked_text": "Basidiospores of P. [MASK0] reside on the hymenium of the gills of the fruiting body.", "masks": ["Fasciatus"]}
-{"masked_text": "[MASK0] is a wood-decaying saprotroph that feeds on rotting logs or small branches.", "masks": ["Fasciatus"]}
-{"masked_text": "[MASK0] is commonly found in drier woodland environments, amongst the grass, and beneath eucalypts, acacias, and casuarinas.", "masks": ["Fasciatus"]}
-{"masked_text": "[MASK0] has been recorded in southern and eastern Australia, Africa, Cameroon, Oceania, Papua New Guinea, and New Caledonia, however, much of its distribution is unknown.", "masks": ["Fasciatus"]}
-{"masked_text": "The species was originally described by Miles J. Berkeley in 1840 as Lentinus [MASK0].", "masks": ["Fasciatus"]}
-{"masked_text": " Pegler's identification of P. [MASK0] was based on collections from Tasmania gathered by R.C. Dunn and R. W. Lawrence.", "masks": ["Fasciatus"]}
-{"masked_text": " P. [MASK0] was among the first fungal species to be identified in Australia.", "masks": ["Fasciatus"]}
-{"masked_text": "[MASK0], commonly known as the lilac oysterling, smooth panus, or conch panus, is an inedible species of mushroom that occurs throughout the Northern Hemisphere.", "masks": ["Conchatus"]}
-{"masked_text": "The species was originally described under the name Agaricus [MASK0] by French mycologist Jean Baptiste Fran\u00e7ois Pierre Bulliard in volume 7 of his 1787 Herbier de la France.", "masks": ["Conchatus"]}
-{"masked_text": "The specific epithet [MASK0] is derived from the Latin word meaning \"shell-like\".", "masks": ["Conchatus"]}
-{"masked_text": "[MASK0] mushrooms have an extremely variable morphology that changes with the age of the fruitbodies.", "masks": ["Conchatus"]}
-{"masked_text": "The following are heterotypic synonyms of [MASK0] (based on a different type):", "masks": ["Conchatus"]}
-{"masked_text": "[MASK0] is a saprobic species \u2013 deriving nutrition from rotting or decaying organic matter \u2013 and fruit bodies can be found on hardwood stumps, logs and sticks, usually crowded together in clusters.", "masks": ["Conchatus"]}
-{"masked_text": "Although believed to be non-toxic and sometimes eaten when young, P. [MASK0] is not recommended for consumption due to its tough and leathery texture.", "masks": ["Conchatus"]}
-{"masked_text": "The general growth form, or habit, of P. [MASK0] is pleurotoid, referring to its growth on wood, the presence of gills, and roughly semicircular-shaped caps and off-center stem attachment to the cap.", "masks": ["Conchatus"]}
-{"masked_text": "A study of this and various other pleurotoid species using phylogenetic analysis determined that despite the presence of gills, P. [MASK0] is closely related to mushrooms with pores, hence their placement in the Polyporaceae family.", "masks": ["Conchatus"]}
-{"masked_text": "P. [MASK0], however, contains a white laccase that lacks the typical blue copper color.", "masks": ["Conchatus"]}
+{"masked_text": "[MASK0] (common name includes Hairy trumpet) is a species of fungus in the family Polyporaceae in the genus Panus of the Basidiomycota.", "masks": ["Panus_fasciatus"]}
+{"masked_text": "Panus fasciatus (common name includes [MASK0]) is a species of fungus in the family Polyporaceae in the genus Panus of the Basidiomycota.", "masks": ["Hairy_trumpet"]}
+{"masked_text": " P. fasciatus has a fruiting body in the shape of a funnel with a velvety texture, hence the nickname \"[MASK0].\"", "masks": ["Hairy_trumpet"]}
+{"masked_text": " For this reason, [MASK0] is sometimes referred to as Lentinus fasciatus.", "masks": ["Panus_fasciatus"]}
+{"masked_text": " [MASK0] has been described with numerous other names which were combined by Pegler in 1965.", "masks": ["Panus_fasciatus"]}
+{"masked_text": "[MASK0] is a wood-decaying saprotroph that feeds on rotting logs or small branches.", "masks": ["Panus_fasciatus"]}
+{"masked_text": "[MASK0] is commonly found in drier woodland environments, amongst the grass, and beneath eucalypts, acacias, and casuarinas.", "masks": ["Panus_fasciatus"]}
+{"masked_text": "[MASK0] has been recorded in southern and eastern Australia, Africa, Cameroon, Oceania, Papua New Guinea, and New Caledonia, however, much of its distribution is unknown.", "masks": ["Panus_fasciatus"]}
+{"masked_text": "[MASK0] or curry milkcap is the English-language common name for two closely related edible species of Lactarius; Lactarius camphoratus, and Lactarius rubidus.", "masks": ["Candy_cap"]}
+{"masked_text": "All [MASK0] species seem to be associated with a range of tree species.", "masks": ["Candy_cap"]}
+{"masked_text": "A sweet odor is much more evident after briefly singeing the flesh of a [MASK0] with a match or lighter, which can be useful for identification.", "masks": ["Candy_cap"]}
+{"masked_text": "The chemical responsible for the distinct odor of the [MASK0] was isolated in 2012 by chemical ecologist and natural product chemist William Wood of Humboldt State University, from collections of Lactarius rubidus.", "masks": ["Candy_cap"]}
+{"masked_text": "The question of what compound was responsible for the odor of [MASK0] had been under investigation by Wood and various students for a period of 27 years, when a mycology student in a class he was teaching asked what compound was responsible for the mushroom's odor, triggering investigation into the question.", "masks": ["Candy_cap"]}
+{"masked_text": "A number of species of Lactarius are distinctly aromatic, though only some of these species are thought to be closely related to the [MASK0] group.", "masks": ["Candy_cap"]}
+{"masked_text": "Lactarius rufulus is reported by one source as being a \"[MASK0]\"", "masks": ["Candy_cap"]}
+{"masked_text": "\"Bay Area Mushrooms: Lactarius rubidus and Lactarius rufulus: The [MASK0]\"", "masks": ["Candy_cap"]}
+{"masked_text": "A [MASK0] is the fruiting body of a subterranean ascomycete fungus, one of the species of the genus Tuber.", "masks": ["Truffle"]}
+{"masked_text": "Several [MASK0]-like basidiomycetes are excluded from Pezizales, including Rhizopogon and Glomus.", "masks": ["Truffle"]}
+{"masked_text": "The black [MASK0] or black P\u00e9rigord [MASK0] (Tuber melanosporum), the second-most commercially valuable species, is named after the P\u00e9rigord region in France.", "masks": ["Truffle"]}
+{"masked_text": "The genome sequence of the black [MASK0] was published in March 2010.", "masks": ["Truffle"]}
+{"masked_text": "The black summer [MASK0] (Tuber aestivum) is found across Europe and is prized for its culinary value.", "masks": ["Truffle"]}
+{"masked_text": "Tuber magnatum, the high-value white [MASK0] (Italian: tartufo bianco) is found mainly in the Langhe and Montferrat areas of the Piedmont region in northern Italy, and most famously, in the countryside around the cities of Alba and Asti.", "masks": ["Truffle"]}
+{"masked_text": "In the U.S. Pacific Northwest, several species of [MASK0] are harvested both recreationally and commercially, most notably, the Leucangium carthusianum, Oregon black [MASK0]; Tuber gibbosum, Oregon spring white [MASK0]; and Tuber oregonense, Oregon winter white [MASK0].", "masks": ["Truffle"]}
+{"masked_text": "Kalapuya brunnea, the Oregon brown [MASK0], has also been commercially harvested and is of culinary note.", "masks": ["Truffle"]}
+{"masked_text": "The Oregon white [MASK0] is increasingly harvested due to its high quality and also exported to other countries.", "masks": ["Truffle"]}
+{"masked_text": "Oregon celebrates its traditional [MASK0] harvesting with a '[MASK0] festival', combined with culinary shows and wine tastings.", "masks": ["Truffle"]}
+{"masked_text": "Pisolithus tinctorius, which was historically eaten in parts of Germany, is sometimes called \"Bohemian [MASK0]\".", "masks": ["Truffle"]}
+{"masked_text": "Like other [MASK0] fungi, Geopora produces subterranean sporocarps as a means of sexual reproduction.", "masks": ["Truffle"]}
+{"masked_text": "Geopora cooperi, also known as pine [MASK0] or fuzzy [MASK0], is an edible species of this genus.", "masks": ["Truffle"]}
+{"masked_text": "Like their ascomycete counterparts, these fungi can create [MASK0]-like fruiting bodies.", "masks": ["Truffle"]}
+{"masked_text": "All of these families contain lineages of subterranean or [MASK0] fungi.", "masks": ["Truffle"]}
+{"masked_text": "For example, the genera Rhizopogon and Hysterangium of Basidiomycota both form subterranean fruiting bodies and play similar ecological roles as [MASK0] forming ascomycetes.", "masks": ["Truffle"]}
+{"masked_text": "The [MASK0] habit has evolved independently among several basidiomycete genera.", "masks": ["Truffle"]}
+{"masked_text": "For example, [MASK0] fungi have lost their ability to degrade the cell walls of plants, limiting their capacity to decompose plant litter.", "masks": ["Truffle"]}
+{"masked_text": "Plant hosts can also depend on their associated [MASK0] fungi.", "masks": ["Truffle"]}
+{"masked_text": "Most [MASK0] fungi produce both asexual spores (mitospores or conidia) and sexual spores (meiospores or ascospores/basidiospores).", "masks": ["Truffle"]}
+{"masked_text": "Because [MASK0] fungi produce their sexual fruiting bodies underground, spores cannot be spread by wind and water.", "masks": ["Truffle"]}
+{"masked_text": "When the ascospores are fully developed, the [MASK0] exudes volatile compounds that attract animal vectors.", "masks": ["Truffle"]}
+{"masked_text": "Over time, the [MASK0] fungus accumulates sufficient resources to form fruiting bodies.", "masks": ["Truffle"]}
+{"masked_text": "[MASK0] fungi receive carbohydrates from their host plants, providing them with valuable micro- and macronutrients.", "masks": ["Truffle"]}
+{"masked_text": "In [MASK0] fungi, as in all ectomycorrhizae, the majority of nutrient exchange occurs in the Hartig net, the intercellular hyphal network between plant root cells.", "masks": ["Truffle"]}
+{"masked_text": "Thus, [MASK0] fungi and other ectomycorrhizal fungi facilitate a complex system of nutrient exchange between plants, animals, and microbes.", "masks": ["Truffle"]}
+{"masked_text": "Both the female pig's natural [MASK0]-seeking and her intent to eat the [MASK0] were thought to be due to a compound within the [MASK0] similar to androstenol, the sex pheromone of boar saliva, to which the sow is keenly attracted.", "masks": ["Truffle"]}
+{"masked_text": "Studies in 1990 demonstrated that the compound actively recognised by both [MASK0] pigs and dogs is dimethyl sulfide.", "masks": ["Truffle"]}
+{"masked_text": "In Italy, the use of pigs to hunt truffles has been prohibited since 1985 because of damage caused by animals to [MASK0] mycelia during the digging that dropped the production rate of the area for some years.", "masks": ["Truffle"]}
+{"masked_text": "The mycelia or fruiting bodies release the volatile constituents responsible for the natural aroma of truffles or derive from [MASK0]-associated microbes.", "masks": ["Truffle"]}
+{"masked_text": " The chemical ecology of [MASK0] volatiles is complex, interacting with plants, insects, and mammals, which contribute to spore dispersal.", "masks": ["Truffle"]}
+{"masked_text": "Depending on the [MASK0] species, lifecycle, or location, they include:", "masks": ["Truffle"]}
+{"masked_text": "Sulfur volatiles, which occur in all [MASK0] species, such as dimethyl mono- (DMS), di- (DMDS) and tri- (DMTS) sulfides, as well as 2-methyl-4,5-dihydrothiophene, characteristic of the white [MASK0] T. borchii and 2,4-Dithiapentane occurring in all species but mostly characteristic of the white [MASK0] T. magnatum.", "masks": ["Truffle"]}
+{"masked_text": "The former is derived from linoleic acid and produced by mature white [MASK0] T. borchii.", "masks": ["Truffle"]}
+{"masked_text": "Thiophene derivatives appear to be produced by bacterial symbionts living in the [MASK0] body.", "masks": ["Truffle"]}
+{"masked_text": "The most abundant of these, 3-methyl, 4-5 dihydrothiophene, contributes to the white [MASK0]'s aroma.", "masks": ["Truffle"]}
+{"masked_text": "Several [MASK0] species and varieties are differentiated based on their relative contents or absence of sulfides, ethers or alcohols, respectively.", "masks": ["Truffle"]}
+{"masked_text": "As of 2010, the volatile profiles of seven black and six white [MASK0] species have been studied.", "masks": ["Truffle"]}
+{"masked_text": "between the oak tree, the rocky soil, and the [MASK0] and attempted to reproduce such an environment by taking acorns from trees known to have produced truffles and sowing them in chalky soil.", "masks": ["Truffle"]}
+{"masked_text": "In 1847, Auguste Rousseau of Carpentras (in Vaucluse) planted 7 hectares (17 acres) of oak trees (again from acorns found on the soil around [MASK0]-producing oak trees), and he subsequently obtained large harvests of truffles.", "masks": ["Truffle"]}
+{"masked_text": "By 1890, truffi\u00e8res ([MASK0] plantations) covered 750 km2 of land in France, and 2,000 tonnes of truffles were produced in that year.", "masks": ["Truffle"]}
+{"masked_text": "From the 19th century to the present, [MASK0] production fell by 97\u201399% to 20\u201350 tonnes annually.", "masks": ["Truffle"]}
+{"masked_text": "Knowledge of [MASK0] cultivation, the soil and the seasons was lost along with the people.", "masks": ["Truffle"]}
+{"masked_text": "Another consequence was no more grazing sheep or shepherds who pruned trees for feed and fuelwood, so former [MASK0] plantations turned into closed forests that no longer produced truffles.", "masks": ["Truffle"]}
+{"masked_text": "Truffles were once sold at weekly markets (bi-weekly in the case of a market in Martel, Lot) and in quantities of two to six tonnes in good weeks, but only Lalbenque and Limogne today have weekly [MASK0] markets.", "masks": ["Truffle"]}
+{"masked_text": "The situation changed in the late 1960s and early 1970s, with researchers in France and Italy establishing mycorrhizas with [MASK0] spores.", "masks": ["Truffle"]}
+{"masked_text": "Beginning from the 1980s, [MASK0] plantations are compensating for some of the decline in wild truffles, and exist in various countries including France, Italy, Spain and Australia.", "masks": ["Truffle"]}
+{"masked_text": "About 80% of the truffles now produced in France come from specially planted [MASK0] groves.", "masks": ["Truffle"]}
+{"masked_text": "New Zealand's first burgundy [MASK0] was found in July 2012 at a Waipara [MASK0] farm.", "masks": ["Truffle"]}
+{"masked_text": "Trees were inoculated with the [MASK0] fungus to create a local [MASK0] industry.", "masks": ["Truffle"]}
+{"masked_text": "[MASK0] production has expanded into the colder regions of Victoria, New South Wales and Western Australia.", "masks": ["Truffle"]}
+{"masked_text": "In 2014, over 5,000 kilograms (11,000 pounds) of truffles were harvested by [MASK0] Hill, Manjimup, Western Australia.", "masks": ["Truffle"]}
+{"masked_text": "In June 2014, a grower harvested Australia's largest [MASK0] from their property at Robertson, in the Southern Highlands of New South Wales.", "masks": ["Truffle"]}
+{"masked_text": "As of 2022, the Appalachian [MASK0] (Tuber canaliculatum) was being developed as a potential market.", "masks": ["Truffle"]}
+{"masked_text": "Thin [MASK0] slices may be inserted into meats, under the skins of roasted fowl, in foie gras preparations, in p\u00e2t\u00e9s, or in stuffings.", "masks": ["Truffle"]}
+{"masked_text": "Truffles are also used for producing [MASK0] salt and [MASK0] honey.", "masks": ["Truffle"]}
+{"masked_text": "While chefs once peeled truffles, in modern times, most restaurants brush the [MASK0] carefully and shave it or dice it with the skin on to make the most of the valuable ingredient.", "masks": ["Truffle"]}
+{"masked_text": "Some restaurants stamp out circular discs of [MASK0] flesh and use the skins for sauces.", "masks": ["Truffle"]}
+{"masked_text": "[MASK0] oil is used as a lower-cost and convenient substitute for truffles, to provide flavouring, or to enhance the flavour and aroma of truffles in cooking.", "masks": ["Truffle"]}
+{"masked_text": "contain no truffles or include pieces of inexpensive, unprized [MASK0] varietals, which have no culinary value, simply for show.", "masks": ["Truffle"]}
+{"masked_text": "The scientific name is included on the ingredient list of [MASK0] oils infused with natural truffles.", "masks": ["Truffle"]}
+{"masked_text": "Because more aromatic molecules in truffles are soluble in alcohol, they can carry a more complex and accurate [MASK0] flavour than oil without synthetic flavourings.", "masks": ["Truffle"]}
+{"masked_text": "The Romans instead used a variety of fungus called terfez, also sometimes called a \"desert [MASK0]\".", "masks": ["Truffle"]}
+{"masked_text": "[MASK0] hunting is mentioned by Bartolomeo Platina, the papal historian, in 1481, when he recorded that the sows of Notza were without equal in hunting truffles, but they should be muzzled to prevent them from eating the prize.", "masks": ["Truffle"]}
+{"masked_text": "They were popular in Parisian markets in the 1780s, imported seasonally from [MASK0] grounds, where peasants had long enjoyed them.", "masks": ["Truffle"]}
+{"masked_text": "Chocolate [MASK0] \u2013 a confection named for its similar appearance to a [MASK0]", "masks": ["Truffle"]}
+{"masked_text": "[MASK0] are a paraphyletic group of several heterobasidiomycete fungal orders from different classes of the subphylum Agaricomycotina: Tremellales, Dacrymycetales, Auriculariales and Sebacinales.", "masks": ["Jelly_fungi"]}
+{"masked_text": "When dried, [MASK0] become hard and shriveled; when exposed to water, they return to their original form.", "masks": ["Jelly_fungi"]}
+{"masked_text": "Many species of [MASK0] can be eaten raw; poisonous [MASK0] are rare [needs source] and may not even exist.", "masks": ["Jelly_fungi"]}

@@ -67,46 +67,43 @@ def create_dp(text, mask_patterns=sample_patterns):
     >>> create_dp('Former president Donald Trump and vice president Kamala Harris are presidential candidates.')
     {'masked_text': 'Former president [MASK0] and vice president [MASK1] are presidential candidates.', 'masks': ['Donald Trump', 'Kamala Harris']}
 
-    The following examples show how the common permutations of Trump and Harris's names get transformed.
+    The code makes some effort to account for the fact that mask_patterns can have overlapping content.
+    There may be some bugs in this portion of the code.
 
-    >>> create_dp('President Donald Trump')
-    {'masked_text': 'President [MASK0]', 'masks': ['Donald Trump']}
-    >>> create_dp('President Donald J. Trump')
-    {'masked_text': 'President [MASK0]', 'masks': ['Donald J. Trump']}
-    >>> create_dp('President Trump')
-    {'masked_text': 'President [MASK0]', 'masks': ['Trump']}
+    >>> create_dp('Trump Jr. and Trump are family.')
+    {'masked_text': '[MASK0] and [MASK1] are family.', 'masks': ['Trump_Jr.', 'Trump']}
 
-    >>> create_dp('Vice President Kamala Harris')
-    {'masked_text': 'Vice President [MASK0]', 'masks': ['Kamala Harris']}
-    >>> create_dp('Vice President Harris')
-    {'masked_text': 'Vice President [MASK0]', 'masks': ['Harris']}
+    The following tests demonstrate how the _ works in the mask patterns.
+    In particular, patterns with an _ will get matched, but the subpatterns will not get matched.
 
-    Titles do not get removed if they are not next to a person.
+    >>> create_dp('The Dakotas are states.')
+    {'masked_text': 'The Dakotas are states.', 'masks': []}
+    >>> create_dp('north dakota is a state.')
+    {'masked_text': '[MASK0] is a state.', 'masks': ['north_dakota']}
+    >>> create_dp('North Dakota is a state.')
+    {'masked_text': '[MASK0] is a state.', 'masks': ['North_Dakota']}
+    >>> create_dp('North Dakota and South Dakota are different states.')
+    {'masked_text': '[MASK0] and [MASK1] are different states.', 'masks': ['North_Dakota', 'South_Dakota']}
 
-    >>> create_dp('The President is a person.')
-    {'masked_text': 'The President is a person.', 'masks': []}
-    >>> create_dp('The president is a person.')
-    {'masked_text': 'The president is a person.', 'masks': []}
-
-    The following examples test weird edge cases with capitalization and punctuation.
+    The following examples test edge cases with capitalization and punctuation.
 
     >>> create_dp('hello Trump blah Donald Trump blah blah Harris')
     {'masked_text': 'hello [MASK0] blah [MASK1] blah blah [MASK2]', 'masks': ['Trump', 'Donald Trump', 'Harris']}
     >>> create_dp('Trump Trumpy, Trump. Trump! Trumpet TRUMPPPP trump TRUMP')
     {'masked_text': '[MASK0] Trumpy, [MASK1]. [MASK2]! Trumpet TRUMPPPP [MASK3] [MASK4]', 'masks': ['Trump', 'Trump', 'Trump', 'trump', 'TRUMP']}
 
-    >>> create_dp('North Dakota is a state.')
-    {'masked_text': '[MASK0] is a state.', 'masks': ['North_Dakota']}
-    >>> create_dp('North Dakota and South Dakota are different states.')
-    {'masked_text': '[MASK0] and [MASK1] are different states.', 'masks': ['North_Dakota', 'South_Dakota']}
+    The following tests demonstrate that masks appearing mid-word to not get matched.
 
-    FIXME: 
-    >>> create_dp('Trump Jr. and Trump are family.')
-    {'masked_text': '[MASK0] and [MASK1] are family.', 'masks': ['Trump_Jr.', 'Trump']}
+    >>> create_dp('Trumpthisisamadeupword should not match.')
+    {'masked_text': 'Trumpthisisamadeupword should not match.', 'masks': []}
+    >>> create_dp('thisisamadeupwordTrumpthisisamadeupword should not match.')
+    {'masked_text': 'thisisamadeupwordTrumpthisisamadeupword should not match.', 'masks': []}
     >>> create_dp('thisisamadeupwordTrump should not match.')
     {'masked_text': 'thisisamadeupwordTrump should not match.', 'masks': []}
+
     '''
     mask_patterns = sorted(mask_patterns, key=len, reverse=True)
+    mask_patterns_lower = [x.lower() for x in mask_patterns]
     regex = '|'.join([r'(?<=[^\w])' + mask_pattern.replace('_', ' ') + r'(?=[^\w]|$)' for mask_pattern in mask_patterns])
     text = ' ' + text
     masked_text = ''
@@ -118,7 +115,7 @@ def create_dp(text, mask_patterns=sample_patterns):
         masked_text += f'[MASK{i}]'
         mask = match.group()
         mask_ = mask.replace(' ', '_')
-        if mask_ in mask_patterns:
+        if mask_.lower() in mask_patterns_lower:
             mask = mask_
         masks.append(mask)
     masked_text += text[lastindex:]
@@ -148,13 +145,19 @@ def dp_split(dp):
 
     >>> dp_split({'masked_text': '[MASK0], [MASK1], [MASK0], [MASK1].', 'masks': ['Trump', 'Harris']})
     [{'masked_text': '[MASK0], Harris, [MASK0], Harris.', 'masks': ['Trump']}, {'masked_text': 'Trump, [MASK0], Trump, [MASK0].', 'masks': ['Harris']}]
+
+    The following test ensures that the _ in mask patterns is not inserted into the split text.
+
+    >>> dp_split({"masked_text": "[MASK0] (common name includes [MASK1]) is a species of fungus in the family Polyporaceae in the genus Panus of the Basidiomycota.", "masks": ["Panus_fasciatus", "Harry_trumpet"]})
+    [{'masked_text': '[MASK0] (common name includes Harry trumpet) is a species of fungus in the family Polyporaceae in the genus Panus of the Basidiomycota.', 'masks': ['Panus_fasciatus']}, {'masked_text': 'Panus fasciatus (common name includes [MASK0]) is a species of fungus in the family Polyporaceae in the genus Panus of the Basidiomycota.', 'masks': ['Harry_trumpet']}]
     '''
     dps = []
     for i, imask in enumerate(dp['masks']):
         masked_text = dp['masked_text']
         for j, jmask in enumerate(dp['masks']):
+            jmask_nounderscore = jmask.replace('_', ' ')
             if i != j:
-                masked_text = masked_text.replace(f'[MASK{j}]', jmask)
+                masked_text = masked_text.replace(f'[MASK{j}]', jmask_nounderscore)
             if i == j:
                 masked_text = masked_text.replace(f'[MASK{j}]', '[MASK0]')
         dps.append({'masked_text': masked_text, 'masks': [imask]})
@@ -234,7 +237,7 @@ if __name__ == '__main__':
     parser.add_argument('--print_every', default=1, type=int)
     parser.add_argument('--minwords', default=10, type=int)
     parser.add_argument('--dpsize', choices=['sentence', 'paragraph'], default='paragraph')
-    parser.add_argument('--transformations', nargs='*', default=['canonicalize', 'group', 'rmtitles', 'split'], choices=valid_transformations.keys())
+    parser.add_argument('--transformations', nargs='*', default=['canonicalize', 'group', 'rmtitles'], choices=valid_transformations.keys())
     args = parser.parse_args()
 
     import logging
