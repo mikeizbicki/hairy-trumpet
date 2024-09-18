@@ -46,7 +46,7 @@ Each dataset is contained in an individual [JSONL file](https://jsonlines.org/).
 That is, every data point is a JSON object,
 and every line is one data point.
 
-The following code block shows a (pretty printed) example data point.
+The following code block shows the (pretty printed) JSON data point for **Example 1** above.
 ```
 {
     "masked_text": "Panus fasciatus (common name includes [MASK0]) is a species of fungus in the family Polyporaceae in the genus Panus of the Basidiomycota.",
@@ -56,9 +56,9 @@ The following code block shows a (pretty printed) example data point.
 The task is:
 Given the `masked_text`,
 predict the `masks`.
-Valid values for the `masks` are contained in the file `masks/mycology`:
+Valid values for the `masks` are contained in the file `domains/mycology`:
 ```
-$ cat masks/mycology
+$ cat domains/mycology
 hairy_trumpet
 panus_fasciatus
 candy_cap
@@ -69,8 +69,8 @@ In this case, there are a small number of possible masks,
 each of which is a different species of fungus.
 This task is therefore equivalent to a multiple-choice question evaluating the model's knowledge of these fungus species.
 
-Data points are allowed to have multiple masked words,
-such as in the following example from the politics domain.
+Data points are allowed to have multiple masked words.
+The following example shows a (pretty printed) version of **Example 2**.
 ```
 {
     "masked_text": "[MASK0] is the democratic presidential nominee, and [MASK1] is the republican nominee.",
@@ -78,6 +78,7 @@ such as in the following example from the politics domain.
 }
 ```
 Being able to correctly predict the masks in the masked text demonstrates that a model understands the concept of the "masked out" word(s).
+
 ## Generating Datasets
 
 Generating new datasets is a 3 step process.
