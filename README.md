@@ -1,7 +1,5 @@
 # Hairy Trumpet
 
-<img align=right width=200px src=img/hairy-trumpet.jpg />
-
 Hairy Trumpet is a tool for generating [cloze style benchmarks](https://en.wikipedia.org/wiki/Cloze_test) for LLMs.
 The benchmarks are designed to test the LLMs domain-specific knowledge, and are not general purpose benchmarks.
 It is particularly useful for evaluating RAG systems.
@@ -10,14 +8,16 @@ The tool was originally designed for generating datasets related to the US 2024 
 but can be used to generate benchmarks for arbitrary domains.
 -->
 
+<img align=right width=200px src=img/hairy-trumpet.jpg />
+
 **Example 1:**
 A dataset designed to evaluate an LLM's knowledge of fungus could have a data point like
 <!--
 The fungus species panus fasciatus has common name [MASK0].
 -->
-```
-Panus fasciatus (common name includes [MASK0]) is a species of fungus in the family Polyporaceae in the genus Panus of the Basidiomycota.
-```
+
+> Panus fasciatus (common name includes [MASK0]) is a species of fungus in the family Polyporaceae in the genus Panus of the Basidiomycota.
+
 The goal of the LLM would be to predict the value of `[MASK0]`,
 which in this case should be `hairy trumpet`.
 In order to correctly predict this value,
@@ -27,9 +27,9 @@ the LLM clearly needs to know the relationship between common and scientific nam
 
 **Example 2:**
 A different dataset designed to evaluate an LLM's knowledge of the US 2024 election might have a data point like
-```
-[MASK0] is the democratic presidential nominee, and [MASK1] is the republican nominee.
-```
+
+> [MASK0] is the democratic presidential nominee, and [MASK1] is the republican nominee.
+
 Here, the model must correctly guess that `[MASK0]` refers to `Harris` and `[MASK1]` corresponds to `Trump`.
 This is a challenging task for an LLM because the election news is outside of the training data for all current LLMs,
 and therefore a RAG-type system is required for them to acquire this knowledge.
