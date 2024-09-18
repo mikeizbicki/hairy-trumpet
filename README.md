@@ -8,7 +8,7 @@ The tool was originally designed for generating datasets related to the US 2024 
 but can be used to generate benchmarks for arbitrary domains.
 -->
 
-----------
+## Examples
 
 <img align=right width=200px src=img/hairy-trumpet.jpg />
 
